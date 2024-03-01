@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const details = [{
     name: "username", type: "text",
@@ -88,7 +88,7 @@ const Registration = () => {
 
     </form>
 
-    <p>Click <a href="/">here</a> to Land Home</p> 
+    <p>Click <Link to="/">here</Link> to Land Home</p> 
 
     </div>
 

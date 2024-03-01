@@ -1,5 +1,5 @@
 import {useState} from 'react'
-
+import { Link } from 'react-router-dom'
 const Login = () => {
 
     const [logInDetails, setLogInDetails] = useState({
@@ -81,7 +81,7 @@ const Login = () => {
 
     </form>
 
-            <p>No Account! Register <a href="/registration">here</a></p> 
+            <p>No Account! Register <Link to="/registration">here</Link></p> 
 
     </div>
 
