@@ -4,15 +4,19 @@ import bodyParser from "body-parser"
 import mongoose from "mongoose"
 import { user } from "./dbschema.js"
 
+
 const PORT = 3000
 const app = express()
 
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+app.use(express.json())
 
+const username = encodeURIComponent("gauravgogoigp")
+const password = encodeURIComponent("Gaurav@97")
 
-await mongoose.connect("mongodb://localhost/loginDatabase")
+const mongoshString = `mongodb+srv://${username}:${password}@signindb.huxclol.mongodb.net/users?retryWrites=true&w=majority`
+await mongoose.connect(mongoshString)
 
 async function main(){
     
@@ -65,5 +69,5 @@ async function main(){
 
 }
 
-main().then(()=>console.log()).then(e=>(console.error(e)))
+main().catch(e=>console.log(e))
 
